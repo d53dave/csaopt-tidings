@@ -13,7 +13,10 @@ add_definitions(${CAPNP_DEFINITIONS})
 
 set(CAPNP_SCHEMA_FILES src/tiding.capnp)
 
-set(CAPNPC_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
-include_directories(${CAPNPC_OUTPUT_DIR})
+if(NOT CAPNPC_OUTPUT_DIR)
+    message(WARNING "CAPNPC_OUTPUT_DIR not set, generating to source dir")
+endif()
 
 capnp_generate_cpp(CAPNP_SRCS CAPNP_HDRS ${CAPNP_SCHEMA_FILES})
+
+add_custom_target(capnp_output ALL DEPENDS ${CAPNP_SRCS} ${CAPNP_HDRS})
