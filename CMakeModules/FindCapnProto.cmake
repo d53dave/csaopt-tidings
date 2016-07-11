@@ -92,7 +92,9 @@ function(CAPNP_GENERATE_CPP SOURCES HEADERS)
 
         # Figure out where the output files will go
         if (NOT DEFINED CAPNPC_OUTPUT_DIR)
+
             set(output_base "${file_path}")
+            MESSAGE( WARNING "output_base: " ${output_base} )
         else()
             # Output files are placed in CAPNPC_OUTPUT_DIR, at a location as if they were
             # relative to CAPNPC_SRC_PREFIX.
@@ -101,8 +103,8 @@ function(CAPNP_GENERATE_CPP SOURCES HEADERS)
             if(NOT "${CAPNPC_SRC_PREFIX}" STREQUAL "${output_prefix}")
                 message(SEND_ERROR "Could not determine output path for '${schema_file}' ('${file_path}') with source prefix '${CAPNPC_SRC_PREFIX}' into '${CAPNPC_OUTPUT_DIR}'.")
             endif()
-
-            string(SUBSTRING "${file_path}" ${prefix_len} -1 output_path)
+            string(REPLACE src/ "" file_path_without_src_prefix ${file_path})
+            string(SUBSTRING "${file_path_without_src_prefix}" ${prefix_len} -1 output_path)
             set(output_base "${CAPNPC_OUTPUT_DIR}${output_path}")
         endif()
 
