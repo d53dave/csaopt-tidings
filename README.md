@@ -4,9 +4,8 @@ This repository contains the CapnProto message schema that CSAOpt uses for commu
 
 ## Usage
 
-I have set this up to include it as a dependency to the other CSAOpt projects with the CMake command ```ExternalProject_Add()```. It includes a CMake Module to locate CapnProto.
-It expects a parameter called ```CAPNPC_OUTPUT_DIR``` which can be passed to the ExternalProject_Add() using the ```CMAKE_CACHE_ARGS``` option. It will generate header and source files into 
-the specified folder. If that parameter is not provided, it will emit a warning and create a src folder in the current CMake build folder.
+I have set this up to include it as a dependency to the other CSAOpt projects with the CMake command ```ExternalProject_Add()```. This includes a CMake Module to locate CapnProto and set up appropriate variables for CMake.
+The call to ExternalProject expects the caller to provide a path to an output folder using the parameter ```CAPNPC_OUTPUT_DIR``` which can be passed to the subsequent CMake call using the ```CMAKE_CACHE_ARGS``` option. If that parameter is not provided, it will emit a warning and use the current CMake build folder.
 
 Example use:
 ```CMake
