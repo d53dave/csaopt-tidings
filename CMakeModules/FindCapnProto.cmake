@@ -92,9 +92,7 @@ function(CAPNP_GENERATE_CPP SOURCES HEADERS)
 
         # Figure out where the output files will go
         if (NOT DEFINED CAPNPC_OUTPUT_DIR)
-
             set(output_base "${file_path}")
-            MESSAGE( WARNING "output_base: " ${output_base} )
         else()
             # Output files are placed in CAPNPC_OUTPUT_DIR, at a location as if they were
             # relative to CAPNPC_SRC_PREFIX.
