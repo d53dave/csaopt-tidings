@@ -113,7 +113,7 @@ function(CAPNP_GENERATE_CPP SOURCES HEADERS)
                 COMMAND "${CAPNP_EXECUTABLE}"
                 ARGS compile
                 -o ${CAPNPC_CXX_EXECUTABLE}${output_dir}
-                --src-prefix ${CAPNPC_SRC_PREFIX}
+                --src-prefix ${CAPNPC_SRC_PREFIX}/src
                 ${include_path}
                 ${CAPNPC_FLAGS}
                 ${file_path}
