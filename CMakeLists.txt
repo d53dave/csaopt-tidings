@@ -11,7 +11,7 @@ find_package(CapnProto REQUIRED)
 include_directories(${CAPNP_INCLUDE_DIRS})
 add_definitions(${CAPNP_DEFINITIONS})
 
-set(CAPNP_SCHEMA_FILES src/tiding.capnp)
+set(CAPNP_SCHEMA_FILES src/tidings.capnp src/plumbing.capnp)
 
 if(NOT CAPNPC_OUTPUT_DIR)
     message(WARNING "CAPNPC_OUTPUT_DIR not set, generating to source dir")
