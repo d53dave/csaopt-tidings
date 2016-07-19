@@ -1,6 +1,6 @@
 @0xa516a3d712db6cf8;
 
-struct Tiding {
+struct Tidings {
 
     id @0 :Text;
     sender @1 :Text;
@@ -16,10 +16,8 @@ struct Tiding {
 
     enum Type {
         error @0;
-        heartbeat @1;
-        workRequest @2;
-        workResults @3;
-        stats @4;
+        workRequest @1;
+        workResults @2;
     }
 
     struct Error {
