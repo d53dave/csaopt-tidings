@@ -6,6 +6,7 @@ struct Plumbing {
     timestamp @2 :UInt64;
     message   @3 :Text;
     payload   @4 :Data;
+    type      @5 :Type;
 
     enum Type {
             error      @0;
