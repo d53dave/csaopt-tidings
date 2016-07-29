@@ -14,5 +14,6 @@ struct Plumbing {
             unregister @2;
             heartbeat  @3;
             stats      @4;
+            ack        @5;
      }
 }
