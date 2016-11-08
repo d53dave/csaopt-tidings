@@ -5,8 +5,21 @@ struct Plumbing {
     sender    @1 :Text;
     timestamp @2 :UInt64;
     message   @3 :Text;
-    payload   @4 :Data;
+    stats     @4 :Stats;
     type      @5 :Type;
+
+    struct Stats {
+        totalVirtualMem         @0 :UInt64;
+        usedVirtualMemory       @1 :UInt64;
+        ownUsedVirtualMemory    @2 :UInt64;
+        totalPhysicalMemory     @3 :UInt64;
+        ownUsedPhysicalMemory   @4 :UInt64;
+        usedCPU                 @5 :Float32;
+        ownUsedCPU              @6 :Float32;
+        queueSizeTidings        @7 :UInt32;
+        queueSizePlumbing       @7 :UInt32;
+        numWorkers              @8 :UInt16;
+    }
 
     enum Type {
             error      @0;
@@ -15,5 +28,5 @@ struct Plumbing {
             heartbeat  @3;
             stats      @4;
             ack        @5;
-     }
+    }
 }
