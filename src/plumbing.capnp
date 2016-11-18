@@ -16,9 +16,10 @@ struct Plumbing {
         ownUsedPhysicalMemory   @4 :UInt64;
         usedCPU                 @5 :Float32;
         ownUsedCPU              @6 :Float32;
-        queueSizeTidings        @7 :UInt32;
-        queueSizePlumbing       @8 :UInt32;
+        queueSizeWork           @7 :UInt32;
+        queueSizeResults        @8 :UInt32;
         numWorkers              @9 :UInt16;
+        avgResponseTimeMs       @10:Float32;
     }
 
     enum Type {
