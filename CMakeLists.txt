@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.2)
 project(csaopt_tidings)
 
 set(CMAKE_CXX_STANDARD 11) # adds -std=c++11
