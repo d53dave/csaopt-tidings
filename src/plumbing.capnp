@@ -29,5 +29,6 @@ struct Plumbing {
             heartbeat  @3;
             stats      @4;
             ack        @5;
+            shutdown   @6;
     }
 }
